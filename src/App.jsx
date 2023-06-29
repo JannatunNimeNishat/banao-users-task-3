@@ -59,7 +59,7 @@ function App() {
     setSingleUser('')
     setSingleUserError('')
     setUserDetailsLoading(true)
-    //console.log(id);
+   
 
     axios.get(`https://602e7c2c4410730017c50b9d.mockapi.io/users/${id}`)
       .then(data => {
@@ -90,7 +90,7 @@ function App() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 px-10 mt-8">
               {/* users */}
               <div className="">
-                <h3 className="capitalize text-center font-semibold  bg-[#C5DFFF] px-8 py-2 mb-5">USERS LIST</h3>
+                <h3 className="capitalize text-center font-semibold  bg-[#C5DFFF] px-8 py-2 mb-5 rounded-t-lg h-[70xl]">USERS LIST</h3>
 
                 {
                   userError ?
@@ -106,8 +106,17 @@ function App() {
                           >
 
                             {
-                              user?.profile?.firstName ?
-                                <img className="h-[50px] w-[50px] rounded-full" src={user?.avatar} alt='user picture' />
+                              user?.avatar ?
+                                <img className="h-[50px] w-[50px] rounded-full" 
+                                
+                                src={
+                                  user?.avatar ?  
+                                  user?.avatar
+                                  :
+                                  userImgStatic
+                                } 
+                                
+                                alt='user picture' />
                                 :
                                 <BiUser />
                             }
@@ -130,7 +139,7 @@ function App() {
 
                 <div className="lg:fixed  right-20   lg:h-[755px] lg:w-[502px]">
 
-                  <h3 className="capitalize text-center font-semibold  bg-[#C5DFFF] px-8 py-2 mb-3">USER DETAILS</h3>
+                  <h3 className="capitalize text-center font-semibold  bg-[#C5DFFF] px-8 py-2 mb-3 rounded-t-lg h-[70xl]">USER DETAILS</h3>
 
                   {
 
